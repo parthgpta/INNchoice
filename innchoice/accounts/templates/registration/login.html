@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{% static 'sign.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-min.css' %}">
+</head>
+<body>
+
+<div class="contain">
+
+    <div class="col_8">
+      <div class="ro">
+           <div id="col_text">Social...</div>
+           <div id="col_img"><img src="{% static 'signup.jpg' %}"></div>
+      </div>
+    </div>
+
+    <div class="col_4">
+      <div class="card1">
+        <h1>Login</h1><br>
+
+          <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+        <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        </table>
+        <br>
+       <input class="btn btn-primary" type="submit" value="Login">
+        <input type="hidden" name="next" value="{{ next }}" />
+
+    </form>
+
+
+      </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
+<!--<img src="{% static 'signup.jpg' %}">-->
+
+
