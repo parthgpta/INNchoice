@@ -61,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/innchoice/accounts/static/base2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
+            <state relative-caret-position="231">
+              <caret line="25" column="107" selection-start-line="25" selection-start-column="107" selection-end-line="25" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -291,7 +291,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13681428" />
@@ -566,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/innchoice/accounts/static/base2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
+        <state relative-caret-position="231">
+          <caret line="25" column="107" selection-start-line="25" selection-start-column="107" selection-end-line="25" selection-end-column="107" />
         </state>
       </provider>
     </entry>
