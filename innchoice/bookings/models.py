@@ -13,10 +13,10 @@ class Constants:
 class Room(models.Model):
     manager = models.ForeignKey(person , related_name='manager', on_delete=models.CASCADE)
     customer = models.ForeignKey(person ,related_name='customer' ,  on_delete=models.CASCADE)
-    checkin = models.DateField()
+    checkin = models.DateField(auto_now_add=True)
     room_type =models.CharField(choices=Constants.room_type , max_length=8 , default='Suite')
     price  = models.IntegerField()
-    checkout = models.DateField()
+    checkout = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return "{0}-{1}".format(self.room_type , self.manager)
