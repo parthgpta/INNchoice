@@ -19,7 +19,7 @@ class person(models.Model):
     user = models.OneToOneField(User ,on_delete=models.CASCADE )
     name = models.CharField(max_length=20 , blank=False )
     gender = models.CharField(choices= CONSTANTS.gender , default='M' ,max_length=8)
-    dob = models.DateField( default =datetime.date(1970, 1, 1))
+    dob = models.DateField( default =datetime.date(1970, 1, 1) )
     phone = models.BigIntegerField(null= False , default=999999999)
     user_type = models.CharField(choices=CONSTANTS.user_type , max_length= 20 ,blank=False,default='Customer')
 
