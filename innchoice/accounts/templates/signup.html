@@ -2,22 +2,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="{% static 'sign.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-grid.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-min.css' %}">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'base2.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap-min.css' %}">
 </head>
 <body>
+	<div class="ch">sss</div>
+	<div class="contain">
+		<div class="ro-01">
+			<div id = 'Fronttxt'>
+				<h1>InnChoice</h1>
+			</div>
+			<div id="home-fonts-js"><strong>Book</strong>
+  				<span class="txt-rotate" data-period="1000"data-rotate='[ "the Best Rooms !", "Most Affodable Rooms!"]'>
+  				</span>
+			</div>
+		</div>
+		<div class="row-02">
+			<div class="but-01">
+				<a href="{% url 'login' %}">
+					<div id='log'>
+					 Login
+					</div>
+				</a>
+				<a href="{% url 'signup' %}">
+				<div id='sign'>
+					 Signup
+				</div>
+				</a>
+			</div>
+			<div class="card-01">
+				<h1>Signup</h1>
+                 <form enctype="multipart/form-data" method="POST">
+          			{% csrf_token %}
+          			{{ user_form.as_p }}
+          			{{ profile_form.as_p}}
+          			<input class="btn btn-primary" type="submit" value="Sign Up">
+        		</form>
+			</div>
+		</div>
 
-        <h1>Signup</h1>
-    <form enctype="multipart/form-data" method="POST">
-          {% csrf_token %}
-          {{ user_form.as_p }}
-          {{ profile_form.as_p}}
-
-          <input class="btn btn-primary" type="submit" value="Sign Up">
-        </form>
-
+	</div>
 </body>
+<script type="text/javascript" src="{% static 'javascript/signup.js' %}">
+
+</script>
 </html>
-<!--<img src="{% static 'signup.jpg' %}">-->

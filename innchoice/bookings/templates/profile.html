@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+    <h1>{{user.person.name}}<br>
+    {{user.person.age}}<br>
+        {{user.person.gender}}<br></h1>
+
+    {% if user.person.user_type == 'Room Manager' %}
+    {% for i in ts %}
+
+            starttime -> {{i.starttime}} <br>
+            endtime -> {{i.endtime}}<br>
+    <a href="{% url 'deltime' pk=i.pk %}"<button type="submit">Delete</button></a>
+    <a href="{% url 'edittime' pk=i.pk  %}"<button type="submit">Edit</button><br><br><br>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
