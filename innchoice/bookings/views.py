@@ -3,9 +3,11 @@ from .models import available , timeslots ,number
 from django.shortcuts import render , redirect , get_object_or_404
 from .forms import edittime
 from accounts.models import person
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='login')
 def homepage(request):
-
+    month_n =['January','February' , 'March','April','May','June','July','August','September','October','November','December']
     a  = datetime.date.today()
     t  = timeslots.objects.all()
     if number.objects.all():
@@ -15,42 +17,22 @@ def homepage(request):
         num.save()
     d = a.day
     m = a.month
+    y = a.year
     print(num)
     adv = num[0].day_adv
-
-    for i in range(adv+1):
-        for j in t:
-            if not available.objects.filter(day = d+i, starttime = j.starttime,month=m):
-                z = available(day = d+i , month = m , year = 2020 ,room_type = 'Suite' , manager = request.user.person ,number = num[0].number,
-                starttime= j.starttime , endtime = j.endtime)
-                z.save()
+    room =['Suite'  , 'Deluxe' ]
+    
+    if request.user.person.user_type == 'Room Manager':
+        for i in range(adv+1):
+            for j in t:
+                for k in room:
+                    if not available.objects.filter(day = d+i, starttime = j.starttime,month=m,room_type = k):
+                        z = available(day = d+i , month = m , year = 2020 ,room_type =k , manager = request.user.person ,number = num[0].number,
+                        starttime= j.starttime , endtime = j.endtime )
+                        z.save()
 
     a = available.objects.filter(day__gte = d , month__gte = m)
-
-
-
-#     a = datetime.date.today()
-#     if request.user.person.user_type == 'Room Manager':
-#         z = available( manager=request.user.person)
-#         l = z.times
-#         print(l)
-#         for i in range(0, 10):
-#             for j in l:
-#                 print(j)
-#                 if not available.objects.filter(date="{}-{}-{}".format(2020, 2, a.day+i) , starttime = j):
-#
-#                     print("YES")
-#
-#                     a = available(date="{}-{}-{}".format(2020, 2, 15 + i), room_type='Suite', available=30,
-#                               starttime = j,manager=request.user.person)
-#                     a.save()
-#     #available.objects.filter(date = "2020-02-21").delete()
-#    # available.objects.filter(date="{}-{}-{}".format(2020, 2, 15)).update(available = 17)
-#    # z =available.objects.filter(date="{}-{}-{}".format(2020, a.month, a.day+3))
-#    # print(z[0].times[0])
-#
-#     av = available.objects.all()
-    return render(request , 'home.html' ,{'av':a} )
+    return render(request , 'home.html' ,{'av':a ,'month':month_n[m-1] ,'year':y} )
 
 
 def addtime(request):
@@ -99,15 +81,28 @@ def days_adv(request):
         if request.method == 'POST':
             num = request.POST['number']
             days = request.POST['days']
-            #request.user.person.update(days_adv = days)
-
             number.objects.filter(id=1).update(day_adv = days)
             number.objects.filter(id = 1).update(number = num)
-            #a[0].update(number  =num)
             return redirect('home')
         return render(request , 'number.html' , {})
     else:
         return redirect('home')
 
 def check(request):
-    return render(request , 'base2.html')
+    av = available.objects.all()
+    return render(request , 'base2.html',{'av':av})
+
+
+def book_room(request , pk):
+    room = available.objects.get(id=pk)
+    if request.method =='POST':
+        a= available.objects.filter(id=pk)
+        print(a[0].number)
+        a = a[0].number
+        available.objects.filter(id=pk).update(number = a-1)
+        return redirect('home')
+
+
+    return render(request , 'book_room.html' ,{'room':room})
+
+    
