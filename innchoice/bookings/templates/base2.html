@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+</head>
+<body>
+	<div class="nav-01">
+		<div class="nav-text">
+			InnChoice
+		</div>
+
+		<div class="navi">
+			<a href="{% url 'home' %}">
+				<div class="book">
+					BookRoom
+				</div>
+			</a>
+			<a href="{% url 'profile' %}">
+				<div class="pro">
+					Profile
+				</div>
+			</a>
+			{% if user.is_authenticated %}
+			<a href="{% url 'logout' %}">
+				<div class="log">
+					Logout
+				</div>
+			</a>
+			{% else %}
+			<a href="{% url 'login' %}">
+				<div class="log">
+					Login
+				</div>
+			</a>
+			{% endif %}
+
+		</div>
+	</div>
+	{% block content%}
+	{% endblock content %}
+</body>
+<script type="text/javascript" src="{% static 'javascript/signup.js' %}">
+	
+</script>
+</html>

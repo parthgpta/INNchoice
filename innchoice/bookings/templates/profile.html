@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+    <div class="mid-01">
+        <div class="mid-txt">
+            <strong>  </strong>
+            <span id='txt-mid'>Profile</span>
+        </div>
+    </div>
+    <div class="out-txt-06">
+            <div class='txt-06'>
+                Name - <span id="txt-11">{{user.person.name}}</span>
+            </div>
+            <div class='txt-07'>
+                Age - <span id="txt-11">{{user.person.age}}</span>
+            </div>
+            <div class="txt-08">
+                Gender - <span id="txt-11">{{user.person.gender}}</span>
+            </div>
+    </div>
+    
+           
+
+
+        <br>
+    <br>
+        <br>
+
+    {% if user.person.user_type == 'Room Manager' %}
+    {% for i in ts %}
+
+            starttime -> {{i.starttime}} <br>
+            endtime -> {{i.endtime}}<br>
+    <a href="{% url 'deltime' pk=i.pk %}"<button type="submit">Delete</button></a>
+    <a href="{% url 'edittime' pk=i.pk  %}"<button type="submit">Edit</button><br><br><br>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

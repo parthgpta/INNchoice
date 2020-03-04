@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+    <div class="mid-01">
+		<div class="mid-txt">
+			<strong>Confirm</strong>
+			<span id='txt-mid'>your Booking</span>
+		</div>
+	</div>
+    <form method="POST">
+    	{% csrf_token %}
+    	<div class="out-txt-06">
+        	<div class='txt-06'>
+        		Name - <input type="text" name="" placeholder ="{{user.person.name}}" disabled>
+        	</div>
+       		<div class='txt-07'>
+       			Date - <input type="text" name="" placeholder="{{room.day}}-{{room.month}}-{{room.year}}" disabled>
+       		</div>
+       		<div class="txt-08">
+        		TimeSlot - <input type="number" name="" placeholder="{{room.starttime}} - {{room.endtime}}" disabled>
+        	</div>
+        	<div class="txt-09">
+        		Room Type - <input type="number" name="" placeholder="{{room.room_type}}" disabled>
+        	</div>
+        <div class="but-10">
+        	<input class="btn btn-primary" type="submit" value="Book Now">
+        </div>
+    </div>
+    </form>
+{% endblock content %}
