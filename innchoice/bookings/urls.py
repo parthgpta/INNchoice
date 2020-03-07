@@ -10,7 +10,9 @@ urlpatterns = [
     path('edit/<int:pk>' , views.edittime , name= 'edittime'),
     path('add/day_adv',views.days_adv , name='daysadv'),
     path('check' , views.check ),
-    path('book_room/<int:pk>',views.book_room , name='book_room')
+    path('book_room/<int:pk>',views.book_room , name='book_room'),
+    path('booked/details/<str:name>' , views.booked_room , name= 'booked_details'),
+    path('del/book/<int:pk>' , views.delbook , name='delbook'),
     #path('add/available/' , views.addavailable , name='addavailable')
 
 ]

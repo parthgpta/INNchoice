@@ -1,0 +1,51 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+    <div class="mid-01">
+		<div class="mid-txt">
+			<strong>Bookings</strong>
+			<span id='txt-mid'></span>
+		</div>
+	</div>
+
+	
+	<div class="book-01-m">
+		{% for i in booked %}
+		<div class="g-chi">
+			<div class="g-txt" >
+					<div class='txt-16'>
+                        Date - <span id="txt-11">{{i.date}} /{{i.month}} /{{i.year}}</span>
+                    </div>
+                    <div class='txt-17'>
+                        Room Type - <span id="txt-11">{{i.room_t}}</span>
+                    </div>
+                    <div class="txt-18">
+                        Timeslot - <span id="txt-11">{{i.startime}} -{{i.endtime}}</span>
+                    </div>
+                    <div class="txt-18">
+                        Room Manager - <span id="txt-11">{{i.manager}}</span>
+                    </div>
+                    {% if user.person.user_type == 'Room Manager' %}
+					<div class="txt-19">
+                        Customer - <span id="txt-11">{{i.customer}}</span>
+                    </div>
+                    {% endif %}
+                    {% if user.person.user_type == 'Customer' %}
+					<a href="{% url 'delbook' pk=i.pk %}">
+						<div class="but-pro-02-out">
+                            Cancel 
+                        </div>
+                   	</a>
+                    {% endif %}
+		 	</div>
+		</div>		
+		
+		{% endfor %}
+	</div>
+
+	
+		
+
+	
+
+{% endblock content %}
