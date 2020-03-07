@@ -1,0 +1,41 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+	<a href="{% url 'profile' %}">
+        <div class="new-new-out">
+            Go Back
+        </div>
+    </a>
+    <div class="mid-01">
+		<div class="mid-txt">
+			<strong>Add </strong>
+			<span id='txt-mid'>Specific Room</span>
+		</div>
+	</div>
+
+	<form method="POST">
+    	{% csrf_token %}
+    	<div class="out-txt-06">
+        	<div class='txt-06'>
+        		Manager - <input type="text" name="" placeholder ="{{user.person.name}}" disabled >
+        	</div>
+       		<div class='txt-07'>
+       			Date - <input type="text" name="date" placeholder="DD-MM-YYYY" >
+       		</div>
+       		<div class="txt-08">
+        		TimeSlot - <input type="text" name="time" placeholder="starttime-endtime" >
+        	</div>
+        	<div class="txt-09">
+        		Room Type - <input type="text" name="type" placeholder="Suite or Deluxe" >
+        	</div>
+        <div class="but-10">
+        	<input class="btn btn-primary" type="submit" value="Add Now">
+        </div>
+    </div>
+    </form>
+	
+		
+
+	
+
+{% endblock content %}

@@ -22,18 +22,17 @@ def homepage(request):
     y = a.year
     if y%4==0:
         month_d[1] = 29
-    m = 6
+
     mon = m
     monn = m
     days_num = month_d[m-1]
-    d =  26
-
+    d = 26
     print(num)
     adv = num[0].day_adv
     room =['Suite'  , 'Deluxe' ]
     
     if request.user.person.user_type == 'Room Manager':
-        for i in range(adv+8):
+        for i in range(adv+1):
             for j in t:
                 for k in room:
                     z = d+i
@@ -45,37 +44,18 @@ def homepage(request):
                         starttime= j.starttime , endtime = j.endtime )
                         z.save()
 
-    a = available.objects.filter( day__gte = d , number__gt =0)
-    b = available.objects.filter(month__gt = mon , number__gt = 0)
+    a = available.objects.filter( day__gte = d , number__gt =0 ).order_by('day','starttime')
+    b = available.objects.filter(month__gt = mon , number__gt = 0).order_by('day','starttime')
     return render(request , 'home.html' ,{'av':a ,'year':y ,'b':b} )
 
 
-def addtime(request):
-    if request.user.person.user_type == 'Room Manager':
-        if request.method == 'POST':
-            st = request.POST['starttime']
-            et = request.POST['endtime']
-            z  = timeslots(starttime = st , endtime= et)
-            z.save()
-            return redirect('home')
-        return render(request , 'changetime.html' , {})
-    else:
-        return redirect('home')
-
-
-
 def profile(request):
-    if request.user.person.user_type == 'Room Manager':
-        ts = timeslots.objects.all()
-        return render(request , 'profile.html' , {'ts':ts})
-
-    else:
-        return render(request , 'profile.html', {})
+    return render(request , 'profile.html', {})
 
 def deltime(request , pk):
     time = get_object_or_404(timeslots , pk=pk)
     time.delete()
-    return  redirect('profile')
+    return  redirect('time_slots')
 
 def edittime(request , pk):
     time = timeslots.objects.filter(pk=pk)
@@ -91,15 +71,31 @@ def edittime(request , pk):
     return render(request , 'edittime.html' , {'form':form})
 
 
-def days_adv(request):
+def time_slots(request):
     if request.user.person.user_type == 'Room Manager':
+        num = number.objects.all()
+        adv = num[0].day_adv
+        room = num[0].number
+        ts = timeslots.objects.all()       
         if request.method == 'POST':
             num = request.POST['number']
             days = request.POST['days']
-            number.objects.filter(id=1).update(day_adv = days)
-            number.objects.filter(id = 1).update(number = num)
-            return redirect('home')
-        return render(request , 'number.html' , {})
+            st = request.POST['starttime']
+            et = request.POST['endtime']
+            et = str(et)
+            st = str(st)
+            if(st!="" and et!=""):
+                z  = timeslots(starttime = st , endtime= et)
+                z.save()
+            num = str(num)
+            if(num!=""):
+                number.objects.filter(id = 1).update(number = num)
+            days = str(days)
+            if(days!=""):
+                number.objects.filter(id=1).update(day_adv = days)
+            
+            return redirect('time_slots')
+        return render(request , 'number.html' , {'ts':ts ,'adv':adv,'room':room})
     else:
         return redirect('home')
 
@@ -140,3 +136,33 @@ def delbook(request ,pk):
                                  starttime=b[0].startime, endtime=b[0].endtime).update(number = num+1)
     b.delete()
     return redirect('profile')
+
+def available_room(request,pk):
+    room = available.objects.filter(id = pk)
+    room.delete()
+    return redirect('home')
+
+def add_specific(request):
+    if request.user.person.user_type == 'Room Manager':
+        if request.method == 'POST':
+            date = request.POST['date']
+            p  = date.split('-')
+            day = p[0]
+            month = p[1]
+            year = p[2]
+            time = request.POST['time']
+            t = time.split("-")
+            st = t[0]
+            et = t[1]
+            ty = request.POST['type']
+            z = available(day = day, month = month , year = year ,room_type =ty , manager = request.user.person ,
+                        starttime= st , endtime = et )
+            z.save()
+            return redirect('home')
+
+        else:
+            return render(request , 'add_room.html')
+    else:
+        return redirect('home')
+
+    

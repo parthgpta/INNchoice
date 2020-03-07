@@ -12,7 +12,7 @@
 		<div class="card-02">
 			<div class="card-02-t">
 				<div id="t-02">Date -</div>
-				<div id='t-03'>{{i.day}} {{i.month}} {{year}}</div>
+				<div id='t-03'>{{i.day}} /{{i.month}} /{{year}}</div>
 				<div id="t-04">TimeSlot -</div>				
 				<div id='t-05'>{{i.starttime}} -	{{i.endtime}}</div>
 				<div id="t-06">Room Type - </div>				
@@ -26,12 +26,26 @@
 		{% else %}
 			<img src="{% static 'deluxe.jpg'%}">
 		{% endif %}
-		
-		<div class= 'book-but'>
-			<a href="{% url 'book_room' pk=i.pk %}">
-				Book Now
-			</a>
-	    </div>
+		 {% if user.person.user_type == 'Room Manager' %}
+			
+				<a href="{% url 'del_available' pk=i.pk %}">
+					<div class= 'book-but'>
+					Delete 
+					</div>
+				</a>
+	    	
+	    {% else %}
+
+	    	
+				<a href="{% url 'book_room' pk=i.pk %}">
+					<div class= 'book-but'>
+					Book Now
+					</div>
+				</a>
+	    	
+			
+			{% endif %}
+
 
 		</div>
 

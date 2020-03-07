@@ -455,6 +455,36 @@ body,html{
 
 }
 
+.new-02-out{
+	font-family: Raleway-LightItalic;
+	position: absolute;
+	left: 40%;
+	top: 80%;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
+	transform: scale(1.15);
+	
+}
+
+.new-02-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1.2);
+	
+
+}
+
 .book-01-m{
 	display: flex;
 	flex-direction: ;
@@ -518,6 +548,104 @@ body,html{
 .but-pro-02-out{
 	font-family: Raleway-LightItalic;
 	position: absolute;
+	left: 30%;
+	top: 110px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	
+	transform: scale(0.75);
+	
+}
+
+.but-pro-02-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(0.8);
+	
+
+}
+
+.card-05-out{
+	position: relative;
+}
+
+.card-05{
+	margin: auto;
+	width: 50%;
+	height:;
+	background-color: ;
+	border-radius: 30px;
+	border:2px solid black;
+	transition: transform 0.2s ;
+	text-align: center;
+	
+	padding: 10px;
+	position: absolute;
+	justify-content: flex-start;
+	left: 400px;
+	top: 10px;
+	box-shadow: 2px 2px 20px 5px rgba(36, 63, 105,0.2);
+	transform: scale();
+}
+.mid-02{
+	width: 100%;
+	transform: scale(0.7);
+	height: 160px;
+}
+
+fieldset{
+	width: 700px;
+}
+
+.txt-16{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+
+.txt-17{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+
+.txt-18{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+.txt-19{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+
+
+.new--out{
+	font-family: Raleway-LightItalic;
+	position: ;
 	left: 38%;
 	top: 90px;
 	width: 120px;
@@ -533,16 +661,87 @@ body,html{
 	background-color: white;
 	border : 2px solid black;
 	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
-	transform: scale(0.75);
+	transform: scale(1);
 	
 }
 
-.but-pro-02-out:hover{
+.new--out:hover{
 	background-color: black;
 	color: white;
-	transform: scale(0.8);
+	transform: scale(1);
 	
 
+}
+
+.new-03-out{
+	font-family: Raleway-LightItalic;
+	position:absolute;
+	left: 40%;
+	top: 170px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
+	transform: scale(1);
+	
+}
+
+.new-03-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1);
+}
+
+.but-new-10{
+
+}
+
+{
+
+}
+.new-new-out{
+	font-family: Raleway-LightItalic;
+	position: ;
+	margin-top: 20px;
+	margin-left: 30px;
+	left: 20px;
+	top: 100px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	text-decoration: none;
+}
+
+.new-new-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1.05);
+	
+
+}
+
+.newout{
+	position: absolute;
+	width: 120px;
+	height: 20px;
 }
 
 
