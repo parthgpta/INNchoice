@@ -32,6 +32,26 @@
                     </a>
                
                 {% endif %}
+
+                {% if user.person.user_type == 'Room Manager' %}
+                    <a href="{% url 'add_specific'  %}">
+                        <div class="new-03-out">
+                                Add Specific Room
+                        </div>
+                    </a>
+                    <a href="{% url 'booked_details' name=user.person.name %}">
+                        <div class="but-pro-01-out">
+                                Bookings
+                        </div>
+                    </a>
+                    <a href="{% url 'time_slots'  %}">
+                        <div class="new-02-out">
+                                Add about Rooms
+                        </div>
+                    </a>
+
+
+                {% endif %}
         </div>
     </div>
 
@@ -48,7 +68,7 @@
 
             starttime -> {{i.starttime}} <br>
             endtime -> {{i.endtime}}<br>
-    <a href="{% url 'deltime' pk=i.pk %}"<button type="submit">Delete</button></a>
+    
     <a href="{% url 'edittime' pk=i.pk  %}"<button type="submit">Edit</button><br><br><br>
         {% endfor %}
     {% endif %}

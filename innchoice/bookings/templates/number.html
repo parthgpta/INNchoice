@@ -1,11 +1,71 @@
-<html>
-<body>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="number" name="number" placeholder="number of room"><br>
-        <input type="number" name="days" placeholder="bookingnumber"><br>
-        <input type="submit" value="submit">
-    </form>
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+<a href="{% url 'profile' %}">
+        <div class="new-new-out">
+            Go Back
+        </div>
+    </a>
+<form method="POST">
+	{% csrf_token %}
+    <div class="mid-02">
+		<div class="mid-txt">
+			<strong>Add</strong>
+			<span id='txt-mid'>about Rooms</span>
+		</div>
+	</div>
+	<div class="card-05-out">
+        <div class="card-05">
+            <div class='txt-16'>
+            			<fieldset>
+                        <legend>Time Slots </legend> 
+                        <span id="txt-11">
+                        	{% for i in ts %}
+                        		{{i.starttime}} - {{i.endtime}} <a href="{% url 'deltime' pk=i.pk %}">Delete</a> <br>  
+                        	{% endfor %}
+                        </span>
+                        <span id="txt-11">Add TimeSlot -> 
+                       					<input type="number" name="starttime" placeholder="Enter Starttime" value="E">
+        								<input type="number" name="endtime" placeholder="Enter Endtime" ><br>
+        				</span>
+                    </fieldset>
+            </div>
+            <div class='txt-17'>
+            			<fieldset>
+                        <legend>Number Of Rooms </legend> 
+                        <span id="txt-11">Default Number of Rooms -> {{room}}
+                       					<br>
+        								
+        				</span>
+                        <span id="txt-11">No. of Rooms -> 
+                       					<input type="number" name="number" placeholder="number of room" value="Enter"><br>
+        								
+        				</span>
+                    </fieldset>
+            </div>
+            <div class='txt-18'>
+            			<fieldset>
+                        <legend>Advance Bookings</legend> 
+                        <span id="txt-11">Advance Days of Booking - {{adv}}
+                       					<br>
+        								
+        				</span>
+                        <span id="txt-11">No. of Days for advance booking -> 
+                       					<input type="number" name="days" placeholder="advance booking days"><br>
+        								
+        				</span>
+                    </fieldset>
+            </div><br>
 
-</body>
-</html>
+           
+            
+              
+                    <a href="{% url 'booked_details' name=user.person.name %}">
+                        <div >
+                                <input type="submit" class="new--out"value="Save">   
+                        </div>
+                    </a>
+        </div>
+    </div>
+</form>
+{% endblock content %}
