@@ -7,17 +7,34 @@
             <span id='txt-mid'>Profile</span>
         </div>
     </div>
-    <div class="out-txt-06">
-            <div class='txt-06'>
-                Name - <span id="txt-11">{{user.person.name}}</span>
+    <div class="card-04-out">
+        <div class="card-04">
+            <div class="txt-out-06">
+                <div class="card-04-txt">                
+                    <div class='txt-13'>
+                        Name - <span id="txt-11">{{user.person.name}}</span>
+                    </div>
+                    <div class='txt-14'>
+                        Age - <span id="txt-11">{{user.person.age}}</span>
+                    </div>
+                    <div class="txt-15">
+                        Gender - <span id="txt-11">{{user.person.gender}}</span>
+                    </div>
+                </div>
             </div>
-            <div class='txt-07'>
-                Age - <span id="txt-11">{{user.person.age}}</span>
-            </div>
-            <div class="txt-08">
-                Gender - <span id="txt-11">{{user.person.gender}}</span>
-            </div>
+
+            
+                {% if user.person.user_type == 'Customer' %}
+                    <a href="{% url 'booked_details' name=user.person.name %}">
+                        <div class="but-pro-01-out">
+                            My Bookings
+                        </div>
+                    </a>
+               
+                {% endif %}
+        </div>
     </div>
+
     
            
 

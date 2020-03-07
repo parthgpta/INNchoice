@@ -38,3 +38,17 @@ class number(models.Model):
     def __str__(self):
         return '{}-{}'.format(self.number,self.day_adv)
 
+class booked(models.Model):
+    date = models.IntegerField()
+    month = models.IntegerField()
+    year = models.IntegerField()
+    room_t = models.CharField(max_length=8)
+    startime = models.IntegerField()
+    endtime = models.IntegerField()
+    customer = models.CharField(max_length=20)
+    manager = models.CharField(max_length=20)
+
+    def __str__(self):
+        return '{}-{}'.format(self.customer , self.date)
+
+
