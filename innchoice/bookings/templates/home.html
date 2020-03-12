@@ -27,13 +27,13 @@
 			<img src="{% static 'deluxe.jpg'%}">
 		{% endif %}
 		 {% if user.person.user_type == 'Room Manager' %}
-			
+				<!-- 
 				<a href="{% url 'del_available' pk=i.pk %}">
 					<div class= 'book-but'>
-					Delete 
+					/Delete 
 					</div>
 				</a>
-	    	
+	    	 -->
 	    {% else %}
 
 	    	
@@ -71,11 +71,21 @@
 			<img src="{% static 'deluxe.jpg'%}">
 		{% endif %}
 
-		<div class= 'book-but'>
-			<a href="{% url 'book_room' pk=i.pk %}">
-				Book Now
-			</a>
-	    </div>
+		{% if user.person.user_type == 'Room Manager' %}
+			
+				
+	    	
+	    {% else %}
+
+	    	
+				<a href="{% url 'book_room' pk=i.pk %}">
+					<div class= 'book-but'>
+					Book Now
+					</div>
+				</a>
+	    	
+			
+			{% endif %}
 
 		</div>
 

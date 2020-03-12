@@ -33,7 +33,7 @@ class available(models.Model):
 
 class number(models.Model):
     number = models.IntegerField(default=30)
-    day_adv = models.IntegerField(default=5)
+    day_adv = models.IntegerField(default=2)
 
     def __str__(self):
         return '{}-{}'.format(self.number,self.day_adv)

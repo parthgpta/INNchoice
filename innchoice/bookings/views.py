@@ -15,10 +15,13 @@ def homepage(request):
         num = number.objects.all()
     else:
         num = number()
+        time_s = timeslots(starttime=12 , endtime=5)
+        time_s.save()
         num.save()
     d = a.day
     m = a.month
-
+    print(num[0])
+    print()
     y = a.year
     if y%4==0:
         month_d[1] = 29
@@ -26,8 +29,9 @@ def homepage(request):
     mon = m
     monn = m
     days_num = month_d[m-1]
-    d = 26
+
     print(num)
+    num = number.objects.all()
     adv = num[0].day_adv
     room =['Suite'  , 'Deluxe' ]
     
@@ -46,7 +50,8 @@ def homepage(request):
 
     a = available.objects.filter( day__gte = d , number__gt =0 ).order_by('day','starttime')
     b = available.objects.filter(month__gt = mon , number__gt = 0).order_by('day','starttime')
-    return render(request , 'home.html' ,{'av':a ,'year':y ,'b':b} )
+    time = timeslots.objects.all()
+    return render(request , 'home.html' ,{'av':a ,'year':y ,'b':b ,'timeslots':time} )
 
 
 def profile(request):
@@ -122,43 +127,62 @@ def book_room(request , pk):
     
 def booked_room(request ,name):
     if request.user.person.user_type == 'Customer':
-        a = booked.objects.filter(customer = name)
+        a = booked.objects.filter(customer = name).order_by('date','startime')
+
     else:
-        a = booked.objects.all()
+        a = booked.objects.all().order_by('date')
     return render(request, 'booked.html' , {'booked':a})
 
 def delbook(request ,pk):
     b = booked.objects.filter(id = pk)
     m = available.objects.filter(day = b[0].date , month = b[0].month , year = b[0].year ,
                                  starttime = b[0].startime , endtime = b[0].endtime)
-    num = m[0].number
-    m = available.objects.filter(day=b[0].date, month=b[0].month, year=b[0].year,
+    if m:
+        num = m[0].number
+        m = available.objects.filter(day=b[0].date, month=b[0].month, year=b[0].year,
                                  starttime=b[0].startime, endtime=b[0].endtime).update(number = num+1)
     b.delete()
     return redirect('profile')
 
 def available_room(request,pk):
     room = available.objects.filter(id = pk)
+    if room:
+        print(pk)
     room.delete()
+    room = available.objects.filter(id=pk)
+
+
+    print('d')
     return redirect('home')
 
 def add_specific(request):
     if request.user.person.user_type == 'Room Manager':
         if request.method == 'POST':
             date = request.POST['date']
-            p  = date.split('-')
-            day = p[0]
-            month = p[1]
-            year = p[2]
+            date = str(date)
+            if date!="":
+                p  = date.split('-')
+                day = p[0]
+                month = p[1]
+                year = p[2]
             time = request.POST['time']
-            t = time.split("-")
-            st = t[0]
-            et = t[1]
+            time = str(time)
+            if time!="":
+                t = time.split("-")
+                st = t[0]
+                et = t[1]
+
             ty = request.POST['type']
-            z = available(day = day, month = month , year = year ,room_type =ty , manager = request.user.person ,
-                        starttime= st , endtime = et )
-            z.save()
-            return redirect('home')
+            ty = str(ty)
+            num = number.objects.all()
+            num = num[0].number
+            if ty!="" and date!="" and time!="":
+                z = available(day = day, month = month , year = year ,room_type =ty , manager = request.user.person ,
+                        starttime= st , endtime = et , number= num)
+                z.save()
+                return redirect('home')
+            else:
+                return render(request, 'add_room.html')
 
         else:
             return render(request , 'add_room.html')
