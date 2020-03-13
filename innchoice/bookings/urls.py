@@ -14,6 +14,7 @@ urlpatterns = [
     path('booked/details/<str:name>' , views.booked_room , name= 'booked_details'),
     path('del/book/<int:pk>' , views.delbook , name='delbook'),
     path('delete/room/available/<int:pk>' , views.available_room , name = 'del_available'),
+    path('info/api', views.api_info , name='api_info')
     #path('add/available/' , views.addavailable , name='addavailable')
 
 ]

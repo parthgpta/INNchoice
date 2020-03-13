@@ -744,6 +744,41 @@ fieldset{
 	height: 20px;
 }
 
+.card-new-05{
+	width: 75%;
+	background-color: ;
+	height: 100%;
+	margin:auto;
+	margin-top: -40px;
+	padding: 10px;
+	transform: scale();
+}
+
+.card-new-5-txt{
+	font-size: 35px;
+	font-family: Raleway-LightItalic;
+	font-weight: bold;
+}
+.card-new-5-txt2{
+	font-size: 21px;
+	font-family: Raleway-ExtraLightItalic;
+	font-weight: ;
+}
+.card-new-5-txt3{
+	font-size: 28px;
+	font-family: Raleway-LightItalic;
+	font-weight: bold;
+}
+.card-new-5-txt4{
+	font-size: 24px;
+	font-family: OpenSans-Regular;
+	font-weight: ;
+}
+.card-new-5-txt5{
+	font-size: 24px;
+	font-family: ;
+	font-weight: ;
+}
 
 /*.contain{
 	width: 100vw;
