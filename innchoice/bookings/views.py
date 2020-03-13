@@ -189,4 +189,5 @@ def add_specific(request):
     else:
         return redirect('home')
 
-    
+def api_info(request):
+    return render(request , 'api_info.html')

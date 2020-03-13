@@ -1,0 +1,188 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+	<div class="mid-01">
+		<div class="mid-txt">
+			<strong>Using</strong>
+			<span id='txt-mid'>API's</span>
+		</div>
+	</div>
+	
+	<div class="card-new-05">
+		<div class="card-new-5-txt">Introduction</div><hr><br>
+		<div class="card-new-5-txt2">
+			With <strong>Innchoice API</strong> you can get access to some of our data in machine-readable JSON format.<br><br>
+			To access the data you just send a HTTP-request to address<strong><code>" /api/{methodname} "</code> </strong>with method-specific parameters. Each method description has an example URL.<br><br><br>
+		</div>
+	<div class="card-new-5-txt3">Method Names</div><hr><br>
+		<ul>
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>accounts/listusers</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					Returns a list of all registered Users , informations and their User Types.<br>
+					<strong>Returned Objects Example- </strong>
+							<code> " <br>[<br>
+    {<br>
+        "user": 1,<br>
+        "name": "user1",<br>
+        "gender": "Male",<br>
+        "dob": "1985-10-12",<br>
+        "phone": 9559889632,<br>
+        "user_type": "Room Manager"<br>
+    },<br>
+    
+    {
+        "user": 2,<br>
+        "name": "user2",<br>
+        "gender": "Male",<br>
+        "dob": "1958-10-02",<br>
+        "phone": 9988995566,<br>
+        "user_type": "Customer"<br>
+    }<br>
+]"
+							</code>	<br>
+					<strong>URL - <code>" /api/accounts/listusers "</code> </strong>
+				</div>
+			</li><br><br>
+
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>accounts/listusers/create/signup</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User can signup themselves , they need to send a Username and Password .<br>
+					<strong>Example -</strong>
+							<code> " {
+    									"username": "newuser",
+    									"password: "******"
+									}"
+							</code> 
+					<br>
+					<strong>URL - <code>" /api/accounts/listusers/create/signup "</code> </strong>
+				</div>
+			</li><br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>accounts/listusers/create/profile</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					<u>(Users have to signup on above link First)</u><br>
+					User can create Profile for themselves on InnChoice , they need to send a user(as created in the previous link) ,name, gender ,dob , phone and Usertype (Customer or Room Manager) .<br>
+					<strong>Example -</strong>
+							<code> " [<br>
+    {<br>
+        "user": newuser,<br>
+        "name": "newuser",<br>
+        "gender": "Male",<br>
+        "dob": "1985-10-12",<br>
+        "phone": 9559889632,<br>
+        "user_type": "Room Manager"<br>
+    },<br>]<br>"
+							</code> 
+					<br>
+					<strong>URL - <code>" /api/accounts/listusers/create/profile"</code> </strong>
+				</div>
+			</li><br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>bookings/rooms/lists</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					Returns a list of all available rooms and their details . <br>
+					<strong>Returned Objects Example- </strong>
+							<code> " <br>[<br>
+    {<br>
+        "number": 28,<br>
+        "day": 21,<br>
+        "month": 3,<br>
+        "year": 2020,<br>
+        "room_type": "Suite",<br>
+        "starttime": 12<br>
+        "endtime": 17<br>
+    },<br>
+    {<br>
+        "number": 16,<br>
+        "day": 22,<br>
+        "month": 3,<br>
+        "year": 2020,<br>
+        "room_type": "Deluxe",<br>
+        "starttime": 7<br>
+        "endtime": 11<br>
+    }<br>
+]"
+							</code>	<br>
+					<strong>URL - <code>" /api/bookings/rooms/lists	 "</code> </strong>
+				</div>
+			</li><br><br>
+				
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>bookings/timeslots/list</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					Returns a list of all available timeslots.<br>
+					<strong>Returned Objects Example -</strong>
+							<code> " [<br>{<br>
+    									"starttime": 12,<br>
+    									"endtime": 17<br>
+									},<br>
+									{<br>
+    									"starttime": 7,<br>
+    									"endtime": 11<br>
+									}<br>]"
+							</code> 
+					<br>
+					<strong>URL - <code>" /api/bookings/timeslots/list "</code> </strong>
+				</div>
+			</li><br><br>
+
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>booked/list/&lt;name&gt;</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					Returns a list of all bookings of a Specific customer . User have to send a string name <br>
+					<strong>Returned Objects Example -</strong>
+							<code> " [<br>
+    {<br>
+        "customer": &lt;name&gt;,<br>
+        "manager": "newmanager",<br>
+        "date": 21,<br>
+        "month": 3,<br>
+        "year": 2020,<br>
+        "room_t": "Suite",<br>
+        "starttime": 7,<br>
+    	"endtime": 11<br>
+        
+    },<br>
+    {<br>
+        "customer": &lt;name&gt;,<br>
+        "manager": "newmanager",<br>
+        "date": 22,<br>
+        "month": 3,<br>
+        "year": 2020,<br>
+        "room_t": "Deluxe",<br>
+        "starttime": 12,<br>
+    	"endtime": 17<br>
+        
+    },<br>]<br>""
+							</code> 
+					<br>
+					<strong>URL - <code>" /api/bookings/booked/list/&lt;name&gt; "</code> </strong>
+				</div>
+			</li><br><br>
+
+		</ul> 
+		
+	</div>
+			 
+	
+{% endblock content %}
+<!-- <li><strong>Bookings - </strong>Represents  about Registered Users and can Signup .</li> -->
