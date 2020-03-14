@@ -52,3 +52,49 @@ And additional requirements are in **requirements.txt** and will be installed th
 
 
 ![Screenshot](signup.png)
+
+* **_Room Booking_** - Customer can Book Room from various available days and timeslots . 
+
+
+![Screenshot](book.png)
+
+
+
+
+* **_Customer Profile_** - Customer can see his own past and future bookings and cancel any booking at any time . 
+
+
+![Screenshot](customer_profile.png)
+
+![Screenshot](customer_bookings.png)
+
+
+
+
+* **_Manager Profile_** - Room Manager can see all bookings , Add a specific room availability and Sets the various settings such as Default number of rooms available , timeslots and number of days before for advance booking for reocccurig slots .  
+
+
+![Screenshot](manager_profile.png)
+
+
+![Screenshot](managerp_2.png)
+
+
+![Screenshot](managerp_3.png)
+
+
+![Screenshot](managerp_1.png)
+
+
+
+## API
+Innchoice API endpoints help to get some of the data from our Database in machine-readable JSON format. Users can get data of all Registered Users , all available Room Slots , Timeslots , and details of all Bookings .
+
+![Screenshot](api1.png)
+
+![Screenshot](api2.png)
+
+![Screenshot](api3.png)
+
+![Screenshot](api4.png)
+
