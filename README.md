@@ -47,6 +47,25 @@ And additional requirements are in **requirements.txt** and will be installed th
 * `$ git push origin <module-name>`
 * Open the link given after the previous command or go to `https://github.com/parthgpta/fsf20_scrntask` and create pull request
 
+
+
+## Tests
+Different components can be easily tested against unittesting 
+
+For testing all components together \
+`$python manage.py test`
+
+Testing bookings app \
+`$ python manage.py test bookings`\
+`$ python manage.py test bookings.tests.test_urls`\
+`$ python manage.py test bookings.tests.test_views`
+
+Testing accounts app \
+`$ python manage.py test accounts`\
+`$ python manage.py test accounts.tests.test_urls`\
+`$ python manage.py test accounts.tests.test_views`
+
+
 ## About
 * **_Signing Up_** - User can signup and set User Type according to them either if they are Cutomer or Room Manager
 
