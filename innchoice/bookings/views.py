@@ -20,6 +20,7 @@ def homepage(request):
         num.save()
     d = a.day
     m = a.month
+    num = number.objects.all()
     print(num[0])
     print()
     y = a.year
