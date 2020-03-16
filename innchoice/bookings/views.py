@@ -18,11 +18,21 @@ def homepage(request):
         time_s = timeslots(starttime=12 , endtime=5)
         time_s.save()
         num.save()
+
+    if timeslots.objects.all():
+        pass
+    else:
+        time_s = timeslots(starttime=12, endtime=5)
+        time_s.save()
+
+
     d = a.day
     m = a.month
     num = number.objects.all()
     print(num[0])
     print()
+
+
     y = a.year
     if y%4==0:
         month_d[1] = 29
@@ -163,6 +173,8 @@ def add_specific(request):
             date = str(date)
             if date!="":
                 p  = date.split('-')
+                if len(p) != 3:
+                    return redirect('add_specific')
                 day = p[0]
                 month = p[1]
                 year = p[2]
@@ -170,6 +182,9 @@ def add_specific(request):
             time = str(time)
             if time!="":
                 t = time.split("-")
+
+                if len(t)!=2:
+                    return redirect('add_specific')
                 st = t[0]
                 et = t[1]
 
@@ -190,5 +205,6 @@ def add_specific(request):
     else:
         return redirect('home')
 
+@login_required(login_url='login')
 def api_info(request):
     return render(request , 'api_info.html')
