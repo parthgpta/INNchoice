@@ -1,0 +1,154 @@
+@font-face{
+	font-family: Raleway-LightItalic;
+	src :url(fonts/Raleway-LightItalic.ttf);
+}
+
+@font-face{
+	font-family: Raleway-ExtraLightItalic;
+	src :url(fonts/Raleway-ExtraLightItalic.ttf);
+}
+
+@font-face {
+  font-family: 	Caveat-Bold;
+  src: url(fonts/Caveat-Bold.ttf);
+}
+
+body,html{
+	margin-top: -20px;
+	margin-left:  0px;
+	padding: 0px;
+}
+
+.contain{
+	width: 100vw;
+	height: 104.5vh;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	flex : 75% 25%;
+	background-image: linear-gradient(to right, rgb(41, 128, 185), rgb(109, 213, 250), rgb(255, 255, 255));
+}
+#Fronttxt h1{
+	font-size: 90px;
+	position: absolute;
+	left: 120px;
+	top: 215px;
+	font-family: Raleway-LightItalic;
+	text-shadow: 2px 2px #a6a6a6;
+}
+
+.ro-01{
+	text-align: center;
+	flex: 1.6;
+	align-self: center;
+	display: inline-block;
+	
+}
+.row-02{
+	flex: 1;
+	padding-top: 120px;
+	
+	
+}
+
+#home-fonts-js{
+	font-size: 60px;
+	padding-left: 0px;
+	font-family: Raleway-ExtraLightItalic;
+}
+
+.card-01{
+	width: 80%;
+	height: 70vh;
+	background-color: white;
+	padding-left: 40px;
+	border-radius: 30px;
+	box-shadow: 8px 8px 60px 20px rgba(36, 63, 105,0.2);
+}
+
+.card-01 h1{
+	font-family: Raleway-ExtraLightItalic;
+	font-size: 50px;
+	margin-left: 150px;
+}
+
+#log{
+	height: 45px;
+	width: 100px;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 8px;
+	background-color: white;
+	border : 2px solid black;
+	transition: transform 0.2s ;
+	position: absolute;
+	top: 10px;
+	left: 76%;
+
+}
+
+#log:hover{
+	transform: scale(1.05);
+	background-color: black;
+	color: white;
+
+}
+
+#sign{
+	height: 45px;
+	width: 100px;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 8px;
+	background-color: white;
+	border : 2px solid black;
+	transition: transform 0.2s ;
+	position: absolute;
+	top: 10px;
+	left: 84%;
+	
+}
+
+#sign:hover{
+	transform: scale(1.05);
+	background-color: black;
+	color: white;
+
+}
+
+
+form{
+	font-family:Caveat-Bold;
+	font-size: 20px;
+
+}
+
+form p{
+	margin-bottom: 5px;
+}
+label{
+	float: ;
+}
+
+input{
+	border-radius: 12px;
+	width: 17vw;
+
+}
+
+input:focus{
+	border: 2px solid rgba(36, 63, 105,0.8);
+}
+
+input[type="submit"]{
+	margin-left: 9vw;
+	margin-top: 30px;
+	width: 140px;
+	transition: transform .2s ;
+}
+
+input[type="submit"]:hover{
+	transform: scale(1.3);
+}

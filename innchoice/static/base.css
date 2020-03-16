@@ -11,6 +11,18 @@
   font-family: 	Caveat-Bold;
   src: url(fonts/Caveat-Bold.ttf);
 }
+
+@font-face {
+  font-family: 	OpenSans-LightItalic;
+  src: url(fonts/OpenSans-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: 	OpenSans-Regular;
+  src: url(fonts/OpenSans-Regular.ttf);
+}
+
+
 body,html{
 	margin-top: 0px;
 	margin-left:  0px;
@@ -19,13 +31,14 @@ body,html{
 
 .nav-01{
 	width: 100%;
-	height: 95px;
-	background-color:;
-	background-image: linear-gradient(135deg, rgb(41, 128, 185), rgb(109, 213, 250), rgb(255, 255, 255))
+	height: 70px;
+	background-color:black;
+	
 }
 
 .nav-text {
-	font-size: 75px;
+	color: white;
+	font-size: 52px;
 	position: absolute;
 	padding-left: 26px;
 	margin-top: 9px;
@@ -33,25 +46,38 @@ body,html{
 	text-shadow: 2px 2px #a6a6a6;
 }
 .navi{
+	color: white;
 	float: right;
-	font-size: 35px;
+	font-size: 29px;
 	width: 500px;
 	display: flex;
-	height: 60px;
+	height: 40px;
 	padding: 20px;
 	justify-content: space-around;
 	font-family: Raleway-ExtraLightItalic;
+	text-decoration: none;
+}
+.navi a{
+	text-decoration: none;
 }
 
+
+.navi a:visited{
+	color: white;
+}
+
+.navi a:active{
+	color: white;
+}
 .book{
 	transition: transform .2s;
 }
 
 .book:hover {
 	transform: scale(1.05);
-	background-color: black;
-	border-radius: 10px;
-	color: white;
+	background-color: white;
+	
+	color: black;
 }
 
 .pro{
@@ -60,9 +86,9 @@ body,html{
 
 .pro:hover {
 	transform: scale(1.05);
-	background-color: black;
-	border-radius: 10px;
-	color: white;
+	background-color: white;
+	
+	color: black;
 }
 
 .log{
@@ -71,11 +97,688 @@ body,html{
 
 .log:hover {
 	transform: scale(1.05);
+	background-color: white;
+	
+	color: black;
+}
+
+.mid-txt{
+	font-family: Raleway-LightItalic;
+	font-size: 82px;
+	text-align: center;
+	position: absolute;
+	left: 34%;
+	margin-top: 10px;
+}
+
+#txt-mid{
+	font-family: Raleway-ExtraLightItalic;
+	font-size: 62px; 
+}
+.mid-01{
+	width: 100%;
+	position: relative;
+	
+	height: 160px;
+}
+
+.card-out{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
+	align-content: center;
+	margin:35px;
+}
+
+.card-02{
+	margin: auto;
+	width: 50%;
+	height: 200px;
+	background-color: ;
+	border-radius: 30px;
+	border:2px solid black;
+	transition: transform 0.2s ;
+	text-align: center;
+	display: flex;
+	padding: 10px;
+	position: relative;
+	justify-content: flex-start;
+}
+
+.card-02:hover{
+	transform: scale(1.05);
+	box-shadow: 2px 2px 20px 5px rgba(36, 63, 105,0.2);
+
+}
+.card-02 img{
+	height: 200px;
+	width: 300px;
+	border-radius: 30px;
+}
+
+.card-02-t{
+	flex: 2;
+	margin: -27px;
+	margin-left: -39px;
+	transform: scale(0.9);
+	display: inline-block;
+}
+
+#t-02{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	top: 20px;
+	left: 30px;
+}
+
+#t-03{
+	font-family: OpenSans-LightItalic;
+	font-size: 22px;
+	float: left;
+	position: absolute;
+	top: 22px;
+	left: 110px;
+}
+
+#t-04{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	top: 60px;
+	left: 30px;
+}
+
+#t-05{
+	font-family: OpenSans-LightItalic;
+	font-size: 22px;
+	float: left;
+	position: absolute;
+	top: 60px;
+	left: 160px;
+}
+
+#t-06{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	top: 100px;
+	left: 30px;
+}
+
+#t-07{
+	font-family: OpenSans-LightItalic;
+	font-size: 22px;
+	float: left;
+	position: absolute;
+	top: 102px;
+	left: 180px;
+}
+
+#t-08{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	top: 140px;
+	left: 30px;
+}
+
+#t-09{
+	font-family: OpenSans-LightItalic;
+	font-size: 22px;
+	float: left;
+	position: absolute;
+	top: 142px;
+	left: 240px;
+}
+
+.book-but{
+	height: 37px;
+	width: 115px;
+	top: 160px;
+	left: 260px;
+	border-radius: 30px;
+	border:2px solid black;
+	background-color: white;
+	position: absolute;
+	transition: transform 0.2s;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 20px;
+	font-family: OpenSans-Regular;
+}
+
+.book-but:hover{
 	background-color: black;
-	border-radius: 10px;
+	color: white;
+	transform: scale(1.05);
+	
+
+}
+
+.book-but  a{
+	text-decoration: none;
+}
+
+.book-but a:visited{
+	color: black;
+}
+
+.book-but a:active{
 	color: white;
 }
 
+.book-but a:hover{
+	color: white;
+}
+
+.book-but a:link{
+	color: black;
+}
+
+.txt-06{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 36%;
+	
+}
+
+
+.txt-07{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 36%;
+	top: 40px;
+	
+}
+
+
+.txt-08{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 36%;
+	top: 80px;
+	
+}
+
+
+.txt-09{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 36%;
+	top: 120px;
+	
+}
+
+.but-10{
+	position: absolute;
+	top: 190px;
+	left: 40%;
+
+}
+
+.{
+	height: 45px;
+	width: 100px;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 8px;
+	background-color: white;
+	border : 2px solid black;
+	transition: transform 0.2s ;
+	position: absolute;
+	top: 10px;
+	left: 76%;
+
+}
+
+.but-10:hover{
+	transform: scale(1.05);
+	background-color: black;
+	color: white;
+
+}
+.out-txt-06{
+	position: relative;
+	text-align: center;
+	transform: scale(1.1);
+}
+
+#txt-11{
+	font-family: Raleway-ExtraLightItalic;
+}
+
+.card-04-out{
+	position: relative;
+}
+
+.card-04{
+	margin: auto;
+	width: 50%;
+	height:400px;
+	background-color: ;
+	border-radius: 30px;
+	border:2px solid black;
+	transition: transform 0.2s ;
+	text-align: center;
+	display: flex;
+	padding: 10px;
+	position: absolute;
+	justify-content: flex-start;
+	left: 400px;
+	top: -40px;
+	box-shadow: 2px 2px 20px 5px rgba(36, 63, 105,0.2);
+	transform: scale();
+}
+
+.card-04-txt{
+	position: ;
+
+}
+
+.txt-13{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 5%;
+	top: 20px;
+	
+}
+
+
+.txt-14{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 5%;
+	top: 60px;
+	
+}
+
+
+.txt-15{
+	font-family: OpenSans-Regular;
+	font-size: 24px;
+	float: left;
+	position: absolute;
+	left: 5%;
+	top: 100px;
+	
+}
+
+.but-pro-01-out{
+	font-family: Raleway-LightItalic;
+	position: absolute;
+	left: 40%;
+	top: 60%;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
+	transform: scale(1.15);
+	
+}
+
+.but-pro-01-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1.2);
+	
+
+}
+
+.new-02-out{
+	font-family: Raleway-LightItalic;
+	position: absolute;
+	left: 40%;
+	top: 80%;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
+	transform: scale(1.15);
+	
+}
+
+.new-02-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1.2);
+	
+
+}
+
+.book-01-m{
+	display: flex;
+	flex-direction: ;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	
+}
+
+.g-chi{
+	width: 304px;
+	border: 2px solid black;
+	margin:20px;
+	height: 200px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 20px 5px rgba(36, 63, 105,0.2);
+	position: relative;
+}
+.g-txt{
+	transform: scale(1.2);
+	position: absolute;
+	top: 15px;
+	left: 30px;
+}
+
+.but-new-01{
+	height: 37px;
+	width: 115px;
+	top: 160px;
+	left: 260px;
+	border-radius: 30px;
+	border:2px solid black;
+	background-color: white;
+	position: absolute;
+	transition: transform 0.2s;
+	text-align: center;
+	padding-top: 10px;
+	font-size: 20px;
+	font-family: OpenSans-Regular;	
+}
+
+.but-new-01 a{
+	text-decoration: none;
+}
+
+.but-new-01 a:visited{
+	color: black;
+}
+
+.but-new-01 a:active{
+	color: white;
+}
+
+.but-new-01 a:hover{
+	color: white;
+}
+
+.but-new-01 a:link{
+	color: black;
+}
+
+.but-pro-02-out{
+	font-family: Raleway-LightItalic;
+	position: absolute;
+	left: 30%;
+	top: 110px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	
+	transform: scale(0.75);
+	
+}
+
+.but-pro-02-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(0.8);
+	
+
+}
+
+.card-05-out{
+	position: relative;
+}
+
+.card-05{
+	margin: auto;
+	width: 50%;
+	height:;
+	background-color: ;
+	border-radius: 30px;
+	border:2px solid black;
+	transition: transform 0.2s ;
+	text-align: center;
+	
+	padding: 10px;
+	position: absolute;
+	justify-content: flex-start;
+	left: 400px;
+	top: 10px;
+	box-shadow: 2px 2px 20px 5px rgba(36, 63, 105,0.2);
+	transform: scale();
+}
+.mid-02{
+	width: 100%;
+	transform: scale(0.7);
+	height: 160px;
+}
+
+fieldset{
+	width: 700px;
+}
+
+.txt-16{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+
+.txt-17{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+
+.txt-18{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 10%;
+	top: 100px;
+}
+.txt-19{
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	float: left;
+	position: ;
+	left: 5%;
+	top: 100px;
+}
+
+
+.new--out{
+	font-family: Raleway-LightItalic;
+	position: ;
+	left: 38%;
+	top: 90px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
+	transform: scale(1);
+	
+}
+
+.new--out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1);
+	
+
+}
+
+.new-03-out{
+	font-family: Raleway-LightItalic;
+	position:absolute;
+	left: 40%;
+	top: 170px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	box-shadow: 2px 2px 20px 1px rgba(36, 63, 105,0.2);
+	transform: scale(1);
+	
+}
+
+.new-03-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1);
+}
+
+.but-new-10{
+
+}
+
+{
+
+}
+.new-new-out{
+	font-family: Raleway-LightItalic;
+	position: ;
+	margin-top: 20px;
+	margin-left: 30px;
+	left: 20px;
+	top: 100px;
+	width: 120px;
+	background-color: ;
+	height: 38px;
+	border-radius: 30px;
+	transition: transform 0.2s ; 
+	color: black;
+	border-radius: 30px;
+	background-color: red;
+	text-align: center;
+	padding-top: 10px;
+	background-color: white;
+	border : 2px solid black;
+	text-decoration: none;
+}
+
+.new-new-out:hover{
+	background-color: black;
+	color: white;
+	transform: scale(1.05);
+	
+
+}
+
+.newout{
+	position: absolute;
+	width: 120px;
+	height: 20px;
+}
+
+.card-new-05{
+	width: 75%;
+	background-color: ;
+	height: 100%;
+	margin:auto;
+	margin-top: -40px;
+	padding: 10px;
+	transform: scale();
+}
+
+.card-new-5-txt{
+	font-size: 35px;
+	font-family: Raleway-LightItalic;
+	font-weight: bold;
+}
+.card-new-5-txt2{
+	font-size: 21px;
+	font-family: Raleway-ExtraLightItalic;
+	font-weight: ;
+}
+.card-new-5-txt3{
+	font-size: 28px;
+	font-family: Raleway-LightItalic;
+	font-weight: bold;
+}
+.card-new-5-txt4{
+	font-size: 24px;
+	font-family: OpenSans-Regular;
+	font-weight: ;
+}
+.card-new-5-txt5{
+	font-size: 24px;
+	font-family: ;
+	font-weight: ;
+}
 
 /*.contain{
 	width: 100vw;
