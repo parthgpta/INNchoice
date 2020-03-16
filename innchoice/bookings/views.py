@@ -205,6 +205,6 @@ def add_specific(request):
     else:
         return redirect('home')
 
-@login_required(login_url='login')
+
 def api_info(request):
     return render(request , 'api_info.html')
