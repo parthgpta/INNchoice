@@ -15,14 +15,14 @@ def homepage(request):
         num = number.objects.all()
     else:
         num = number()
-        time_s = timeslots(starttime=12 , endtime=5)
+        time_s = timeslots(starttime=12 , endtime=17)
         time_s.save()
         num.save()
 
     if timeslots.objects.all():
         pass
     else:
-        time_s = timeslots(starttime=12, endtime=5)
+        time_s = timeslots(starttime=12, endtime=17)
         time_s.save()
 
 
