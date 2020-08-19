@@ -1,5 +1,5 @@
 
-#InnChoice
+# InnChoice
 
 **InnChoice** is the automated room booking portal where Room Manager and Customer can signup , Room Manager can define the recurring timeslots , rooms available and number of days before advance booking, while a Customer can book from the available number of rooms and timeslots , can see or cancel his past or future bookings . 
 
