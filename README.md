@@ -80,7 +80,7 @@ Testing accounts app \
 * **_Customer Profile_** - Customer can see his own past and future bookings and cancel any booking at any time . 
 
 
-![Screenshot](customer_profile.png)
+
 
 ![Screenshot](customer_bookings.png)
 
@@ -90,7 +90,6 @@ Testing accounts app \
 * **_Manager Profile_** - Room Manager can see all bookings , Add a specific room availability and Sets the various settings such as Default number of rooms available , timeslots and number of days before for advance booking for reocccurig slots .  
 
 
-![Screenshot](manager_profile.png)
 
 
 ![Screenshot](managerp_2.png)
